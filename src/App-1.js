@@ -1,27 +1,13 @@
-import CustomHooksObjectFormat from './hooks/inputHooks-2';
-
+import CustomHooksArrayFormat from './hooks/inputHooks';
 import './App.css';
+
 function App() {
-  const {
-    value: userName,
-    clearInput: clearUserNameInput,
-    onChange: userNameOnChange,
-    showValue: showUserName,
-  } = CustomHooksObjectFormat('');
-
-  const {
-    value: email,
-    clearInput: clearEmailInput,
-    onChange: emailOnChange,
-    showValue: showEmail,
-  } = CustomHooksObjectFormat('');
-
-  const {
-    value: password,
-    clearInput: clearPasswordInput,
-    onChange: passwordOnChange,
-    showValue: showPassword,
-  } = CustomHooksObjectFormat('');
+  const [userName, userNameOnChange, clearUserNameInput, showUserName] =
+    CustomHooksArrayFormat('');
+  const [email, emailOnChange, clearEmailInput, showEmail] =
+    CustomHooksArrayFormat('');
+  const [password, passwordOnChange, clearPasswordInput, showPassword] =
+    CustomHooksArrayFormat('');
 
   function handleOnSubmit(e) {
     e.preventDefault();
